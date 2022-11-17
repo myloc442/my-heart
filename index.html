@@ -76,7 +76,7 @@
 
       #pinkboard:before,
       #pinkboard:after {
-        content: '';
+        content: "";
 
         position: absolute;
 
@@ -131,7 +131,7 @@
   </head>
 
   <body>
-    <h1>Dương Mỹ Long</h1>
+    <h1>Phương Nga</h1>
 
     <div class="box">
       <canvas id="pinkboard"></canvas>
@@ -155,14 +155,14 @@
       (function () {
         var b = 0;
 
-        var c = ['ms', 'moz', 'webkit', 'o'];
+        var c = ["ms", "moz", "webkit", "o"];
 
         for (var a = 0; a < c.length && !window.requestAnimationFrame; ++a) {
-          window.requestAnimationFrame = window[c[a] + 'RequestAnimationFrame'];
+          window.requestAnimationFrame = window[c[a] + "RequestAnimationFrame"];
 
           window.cancelAnimationFrame =
-            window[c[a] + 'CancelAnimationFrame'] ||
-            window[c[a] + 'CancelRequestAnimationFrame'];
+            window[c[a] + "CancelAnimationFrame"] ||
+            window[c[a] + "CancelRequestAnimationFrame"];
         }
 
         if (!window.requestAnimationFrame) {
@@ -190,9 +190,9 @@
 
       var Point = (function () {
         function Point(x, y) {
-          this.x = typeof x !== 'undefined' ? x : 0;
+          this.x = typeof x !== "undefined" ? x : 0;
 
-          this.y = typeof y !== 'undefined' ? y : 0;
+          this.y = typeof y !== "undefined" ? y : 0;
         }
 
         Point.prototype.clone = function () {
@@ -200,7 +200,7 @@
         };
 
         Point.prototype.length = function (length) {
-          if (typeof length == 'undefined')
+          if (typeof length == "undefined")
             return Math.sqrt(this.x * this.x + this.y * this.y);
 
           this.normalize();
@@ -357,7 +357,7 @@
       })();
 
       (function (canvas) {
-        var context = canvas.getContext('2d'),
+        var context = canvas.getContext("2d"),
           particles = new ParticlePool(settings.particles.length),
           particleRate =
             settings.particles.length / settings.particles.duration,
@@ -376,8 +376,8 @@
         }
 
         var image = (function () {
-          var canvas = document.createElement('canvas'),
-            context = canvas.getContext('2d');
+          var canvas = document.createElement("canvas"),
+            context = canvas.getContext("2d");
 
           canvas.width = settings.particles.size;
 
@@ -415,7 +415,7 @@
 
           context.closePath();
 
-          context.fillStyle = '#FF5CA4';
+          context.fillStyle = "#FF5CA4";
 
           context.fill();
 
@@ -472,7 +472,7 @@
 
           render();
         }, 10);
-      })(document.getElementById('pinkboard'));
+      })(document.getElementById("pinkboard"));
     </script>
   </body>
 </html>
